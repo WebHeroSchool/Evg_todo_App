@@ -1,5 +1,5 @@
 import React from 'react';
 
-const Footer = ({count}) => <p style={{fontSize: 18}}> Осталось невыполненных задач: <strong style={{color: 'red'}}> {count} </strong> </p>;
+const Footer = ({count}) => <p style={{fontSize: 18}}> Осталось невыполненных задач: <span style={{color: 'red'}}> {count} </span> </p>;
 
     export default Footer;

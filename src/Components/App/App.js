@@ -11,7 +11,11 @@ const elem = (
         created by <strong> Evgeny Morozov! </strong>
     </p1>
 );
-const todoItem = ['Съездить на работу', 'Продумать дизайн сайта', 'Выполнить еще пару уроков по react!'];
+const items = [
+    {task: 'Съездить на работу'},
+    { task: 'Продумать дизайн сайта'},
+    {task: 'Выполнить еще пару уроков по react!'}
+    ];
 
 const App = () => (
     <div>
@@ -22,7 +26,7 @@ const App = () => (
         }}> <span> Todos app </span> </h1>
         {elem}
         <InputItem/>
-        <ItemList todoItem={todoItem}/>
+        <ItemList items={items}/>
         <Footer count={3}/>
     </div>
 );

@@ -1,11 +1,9 @@
 import React from "react";
 import Item from "../Item/Item";
 
-const ItemList = ({todoItem}) => (
+const ItemList = ({items}) => (
     <ul style={{fontSize: 20, color: 'red'}}>
-        <li> <Item todoItem={todoItem[0]}/> </li>
-        <li> <Item todoItem={todoItem[1]}/> </li>
-        <li> <Item todoItem={todoItem[2]}/> </li>
+        {items.map(item => <li key={item.task}> <Item task={item.task}/> </li>)}
     </ul>
 );
 
