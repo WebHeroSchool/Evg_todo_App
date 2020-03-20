@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: bisque;
+    width: 100%;
+    height: 100vh;
+    padding-left: 2%;
+}
+
+.container__title {
+    color: chocolate;
+    font-size: 2.9em;
+    font-family: 'Lobster', cursive;
+    margin: 0 15px 15px 25px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.container__subtitle {
+    text-align: right;
+    color: burlywood;
+    font-size: 1.3em;
+    text-shadow: 1.5px .5px blueviolet;
+    margin: 0 35% 5% 0;
+    line-height: 8px;
+    font-family: Rockwell;
+}
+
+.input-task {
+    margin-bottom: 15px;
+    font-family: cursive;
+    color: cornflowerblue;
+}
+
+.task-list {
+    line-height: 40px;
+    margin: 0 0 2% 2%;
+}
+
+.footer {
+    font-size: 30px;
+    font-family: 'Pacifico', cursive;
+    color: cornflowerblue;
+}
+
+.footer__count {
+    color: red;
+    text-decoration: underline;
+}
