@@ -6,11 +6,12 @@ import Footer from "../Footer/Footer";
 const elem = (
     <p1 style={{
         color: 'burlywood',
-        fontSize: 20
+        fontSize: 20,
     }}>
         created by <strong> Evgeny Morozov! </strong>
     </p1>
 );
+const todoItem = ['Съездить на работу', 'Продумать дизайн сайта', 'Выполнить еще пару уроков по react!'];
 
 const App = () => (
     <div>
@@ -21,8 +22,8 @@ const App = () => (
         }}> <span> Todos app </span> </h1>
         {elem}
         <InputItem/>
-        <ItemList/>
-        <Footer/>
+        <ItemList todoItem={todoItem}/>
+        <Footer count={3}/>
     </div>
 );
 
