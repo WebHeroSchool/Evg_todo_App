@@ -2,7 +2,7 @@ import React from 'react';
 import InputItem from '../InputItem/InputItem'
 import ItemList from "../ItemList/ItemList";
 import Footer from "../Footer/Footer";
-import './App.css';
+import styles from './App.module.css';
 
 const items = [
     {task: 'Съездить на работу'},
@@ -11,18 +11,18 @@ const items = [
     ];
 
 const App = () => (
-    <div className="container">
-        <h1 className="container__title"> <span> Todos app </span> </h1>
-        <div className="container__subtitle">
+    <div className={styles.container}>
+        <h1 className={styles.title}> <span> Todos app </span> </h1>
+        <div className={styles.subtitle}>
             created by <strong> Evgeny Morozov! </strong>
         </div>
-            <div className="input-task">
+            <div className={styles.input_task}>
                 <InputItem/>
             </div>
-                <div className="task-list">
+                <div className={styles.task_list}>
                     <ItemList items={items} />
                 </div>
-                    <div className="footer">
+                    <div className={styles.footer}>
                         <Footer count={3}/>
                     </div>
     </div>
