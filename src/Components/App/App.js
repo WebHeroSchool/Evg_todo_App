@@ -5,10 +5,16 @@ import Footer from "../Footer/Footer";
 import styles from './App.module.css';
 
 const items = [
-    {task: 'Съездить на работу'},
-    { task: 'Продумать дизайн сайта'},
-    {task: 'Выполнить еще пару уроков по react!'}
-    ];
+    {task: 'Приготовить завтрак!',
+     isDone: true
+    },
+    { task: 'Продумать дизайн сайта',
+      isDone: false
+    },
+    {task: 'Выполнить еще пару уроков по react!',
+     isDone: true
+    }
+ ];
 
 const App = () => (
     <div className={styles.container}>
