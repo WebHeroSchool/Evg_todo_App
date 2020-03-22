@@ -37,12 +37,23 @@
     font-family: cursive;
     color: cornflowerblue;
 }
-
+/*Styles for tasks list*/
 .task_list {
     line-height: 40px;
     margin: 0 0 2% 2%;
 }
 
+.item {
+    font-size: 20px;
+    color: red;
+}
+
+.done {
+    color: lightgreen;
+    text-decoration: line-through;
+
+}
+/*Styles for footer elements */
 .footer {
     font-size: 30px;
     font-family: 'Pacifico', cursive;
