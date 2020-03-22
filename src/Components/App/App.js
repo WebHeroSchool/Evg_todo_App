@@ -22,9 +22,7 @@ const App = () => (
         <div className={styles.subtitle}>
             created by <strong> Evgeny Morozov! </strong>
         </div>
-            <div className={styles.input_task}>
                 <InputItem/>
-            </div>
                 <div className={styles.task_list}>
                     <ItemList items={items} />
                 </div>
