@@ -13,7 +13,7 @@
     padding-left: 2%;
 }
 
-.container__title {
+.title {
     color: chocolate;
     font-size: 2.9em;
     font-family: 'Lobster', cursive;
@@ -22,7 +22,7 @@
     text-decoration: underline;
 }
 
-.container__subtitle {
+.subtitle {
     text-align: right;
     color: burlywood;
     font-size: 1.3em;
@@ -32,13 +32,13 @@
     font-family: Rockwell;
 }
 
-.input-task {
+.input_task {
     margin-bottom: 15px;
     font-family: cursive;
     color: cornflowerblue;
 }
 
-.task-list {
+.task_list {
     line-height: 40px;
     margin: 0 0 2% 2%;
 }
@@ -49,7 +49,7 @@
     color: cornflowerblue;
 }
 
-.footer__count {
+.count {
     color: red;
     text-decoration: underline;
 }
