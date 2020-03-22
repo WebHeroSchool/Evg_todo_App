@@ -1,11 +1,15 @@
 import React from 'react';
-
+import ValidationTextField from '@material-ui/core/TextField';
 
 const ItemInput = () => (
-    <form style={{fontSize: 30}}>
-        Введите дело, чтобы добавить в список:
-        <input style={{fontSize: 20}} type= 'text' />
+    <form>
+        <ValidationTextField
+            label="Введите новую задачу:"
+            variant="outlined"
+            id="validation-outlined-input"
+        />
     </form>
+
 );
 
 export default ItemInput;
