@@ -13,7 +13,8 @@ const items = [
     },
     {task: 'Выполнить еще пару уроков по react!',
      isDone: true
-    }
+    },
+
  ];
 
 const App = () => (
@@ -23,9 +24,8 @@ const App = () => (
             created by <strong> Evgeny Morozov! </strong>
         </div>
                 <InputItem/>
-                <div className={styles.task_list}>
                     <ItemList items={items} />
-                </div>
+
                     <div className={styles.footer}>
                         <Footer count={3}/>
                     </div>
