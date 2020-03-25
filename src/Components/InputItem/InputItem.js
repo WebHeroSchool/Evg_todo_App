@@ -7,8 +7,8 @@ import items from '../App/App'
 const event = () => alert('Added!');
 
 const ItemInput = () => (
-    <form>
-        <Input className={styles.tasks}
+    <form className={styles.tasks}>
+        <Input
                placeholder="Введите новую задачу"
                inputProps={{ 'aria-label': 'description' }}
         />
