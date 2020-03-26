@@ -34,13 +34,16 @@
 
 /* Styles for input*/
 .tasks {
-    width: 20%;
+    width: 76%;
     margin-bottom: 2%;
+    text-align: center;
 }
 
 .addbutton {
     color: cornflowerblue;
     border: transparent 8px solid;
+    padding: 0;
+    margin: 0;
 }
 
 .addbutton:hover {
@@ -52,7 +55,7 @@
 
 /*Styles for tasks list*/
 ul {
-    margin: 0 0 3% 0;
+    margin: 2% 30%;
     list-style-type: none;
     background-color: rgba(232,213,247,0.67);
     border: darkgrey 2px solid;
@@ -75,10 +78,8 @@ li:hover {
 
 .butdelete {
     color: dimgray;
-    position: absolute;
-    left: 480px;
-    margin-top: .3%;
     border: transparent 5px solid;
+    float: right;
 }
 .butdelete:hover {
     color:  firebrick;
@@ -108,6 +109,7 @@ li:hover {
     background-color: rgba(232,213,247,0.67);
     box-shadow: 10px 10px 5px dimgray;
     padding: 0 0 .5% .5%;
+    margin: 2% 30%;
 }
 
 .count {
