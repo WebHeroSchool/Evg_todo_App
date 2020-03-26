@@ -28,7 +28,7 @@ class App extends React.Component {
                 </div>
                 <InputItem/>
                 <ItemList items={this.state.items} />
-
+          
                 <div className={styles.footer}>
                     <Footer count={3}/>
                 </div>
