@@ -15,5 +15,3 @@ const ItemList = ({items}) => (
 
     </ul>
 );
-
-export default ItemList;
