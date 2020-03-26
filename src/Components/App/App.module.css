@@ -8,7 +8,7 @@
 
 .container {
     background-color: bisque;
-    width: 100%;
+    width: 100vm;
     height: 100vh;
     padding-left: 2%;
 }
@@ -32,32 +32,84 @@
     font-family: Rockwell;
 }
 
-.input_task {
-    margin-bottom: 15px;
-    font-family: cursive;
-    color: cornflowerblue;
+/* Styles for input*/
+.tasks {
+    width: 76%;
+    margin-bottom: 2%;
+    text-align: center;
 }
+
+.addbutton {
+    color: cornflowerblue;
+    border: transparent 8px solid;
+    padding: 0;
+    margin: 0;
+}
+
+.addbutton:hover {
+    transition: .2s;
+    border-radius: 50%;
+    background-color: rgba(123,104,238, 0.3);
+    color: coral;
+}
+
 /*Styles for tasks list*/
-.task_list {
-    line-height: 40px;
-    margin: 0 0 2% 2%;
+ul {
+    margin: 2% 30%;
+    list-style-type: none;
+    background-color: rgba(232,213,247,0.67);
+    border: darkgrey 2px solid;
+    border-radius: 4px;
+    width: 36%;
+    box-shadow: 10px 10px 5px darkgrey;
+}
+
+li {
+    margin: 4% 2% 4% 1%;
+    background-color: rgba(210,247,234,0.67);
+    border: gray 1px solid;
+    border-radius: 5px;
+    width: 90%;
+}
+
+li:hover {
+    background-color: rgba(165,172,163,0.46);
+}
+
+.butdelete {
+    color: dimgray;
+    border: transparent 5px solid;
+    float: right;
+}
+.butdelete:hover {
+    color:  firebrick;
+    transition: .2s;
+    border-radius: 50%;
+    background-color: rgba(21,125,255,0.22);
 }
 
 .item {
     font-size: 20px;
-    color: red;
+    color: #3b277f;
 }
 
 .done {
-    color: lightgreen;
     text-decoration: line-through;
-
+    color: #46ba8b;
 }
 /*Styles for footer elements */
 .footer {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Pacifico', cursive;
     color: cornflowerblue;
+    text-decoration: underline;
+    border: 2px solid darkgrey;
+    width: 35.6%;
+    border-radius: 5px;
+    background-color: rgba(232,213,247,0.67);
+    box-shadow: 10px 10px 5px dimgray;
+    padding: 0 0 .5% .5%;
+    margin: 2% 30%;
 }
 
 .count {
