@@ -5,29 +5,30 @@ import Footer from "../Footer/Footer";
 import styles from './App.module.css';
 
 class App extends React.Component {
-    render() {
-        const items = [
-            {task: 'Приготовить завтрак!',
+    state= {
+        items : [
+            { task: 'Приготовить завтрак!',
                 isDone: true
             },
             { task: 'Продумать дизайн сайта',
                 isDone: false
             },
-            {task: 'Выполнить еще пару уроков по react!',
+            { task: 'Выполнить еще пару уроков по react!',
                 isDone: true
             },
+        ]
+    };
 
-        ];
-
-     return (
+    render() {
+        return (
             <div className={styles.container}>
                 <h1 className={styles.title}> <span> Todos app </span> </h1>
                 <div className={styles.subtitle}>
                     created by <strong> Evgeny Morozov! </strong>
                 </div>
                 <InputItem/>
-                <ItemList items={items} />
-
+                <ItemList items={this.state.items} />
+          
                 <div className={styles.footer}>
                     <Footer count={3}/>
                 </div>
