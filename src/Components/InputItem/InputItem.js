@@ -9,8 +9,8 @@ const event = () => alert('Added!');
 const ItemInput = () => (
     <form className={styles.tasks}>
         <Input
-            placeholder="Введите новую задачу"
-            inputProps={{ 'aria-label': 'description' }}
+               placeholder="Введите новую задачу"
+               inputProps={{ 'aria-label': 'description' }}
         />
         <AddCircleOutlineIcon className={styles.addbutton} onClick={event}/>
     </form>
