@@ -5,11 +5,13 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import styles from "../App/App.module.css";
 
 const deltask = () => alert('Deleted!');
-const ItemList = ({items}) => (
+const ItemList = ({items, onClickDone}) => (
     <ul>
         {items.map(item => <li key={item.task}>
-            <Checkbox />
-            <Item task={item.task} isDone={item.isDone}/>
+            <Checkbox
+              onClick={() => onClickDone(item.isDone)}
+            />
+            <Item task={item.task} isDone={item.isDone} />
             <DeleteIcon className={styles.butdelete} onClick={deltask}/>
         </li>)}
 

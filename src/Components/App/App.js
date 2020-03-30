@@ -19,6 +19,8 @@ class App extends React.Component {
         ]
     };
 
+    onClickDone = isDone => console.log (isDone);
+
     render() {
         return (
             <div className={styles.container}>
@@ -27,7 +29,7 @@ class App extends React.Component {
                     created by <strong> Evgeny Morozov! </strong>
                 </div>
                 <InputItem/>
-                <ItemList items={this.state.items} />
+                <ItemList items={this.state.items} onClickDone={this.onClickDone} />
 
                 <div className={styles.footer}>
                     <Footer count={3}/>
