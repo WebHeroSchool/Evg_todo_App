@@ -9,9 +9,14 @@ const ItemList = ({items, onClickDone}) => (
     <ul>
         {items.map(item => <li key={item.task}>
             <Checkbox
-              onClick={() => onClickDone(item.isDone)}
+                checked={item.isDone}
+              onClick={() => onClickDone(item.id)}
             />
-            <Item task={item.task} isDone={item.isDone} />
+            <Item
+                task={item.task}
+                isDone={item.isDone}
+                id={item.id}
+            />
             <DeleteIcon className={styles.butdelete} onClick={deltask}/>
         </li>)}
 
