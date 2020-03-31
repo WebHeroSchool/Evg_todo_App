@@ -2,7 +2,6 @@ import React from 'react';
 import Input from '@material-ui/core/Input';
 import styles from '../App/App.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-import items from '../App/App'
 
 const event = () => alert('Added!');
 
