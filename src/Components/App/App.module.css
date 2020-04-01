@@ -39,6 +39,15 @@
     text-align: center;
 }
 
+.Input {
+    text-decoration: underline black;
+}
+
+.errValid {
+    color: red;
+    border: 2px solid red;
+}
+
 .addbutton {
     color: cornflowerblue;
     border: transparent 8px solid;
