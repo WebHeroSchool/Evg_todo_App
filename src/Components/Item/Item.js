@@ -12,4 +12,8 @@ const Item = ({task, isDone}) => (
     </span>
 );
 
+    Item.defaultProps = {
+        isDone : false
+    };
+
 export default Item;
