@@ -20,7 +20,8 @@ class App extends React.Component {
                 id: 3
             },
         ],
-        count: 3
+        count: 3,
+        isValid: false
     };
 
     onClickDone = id => {
@@ -39,6 +40,26 @@ class App extends React.Component {
         this.setState({items: newItemList, count: this.state.count -1})
     };
 
+    onClickAdd = task => {
+        if (task !== '') {
+            this.setState(state => ({
+                items: [
+                    ...state.items,
+                    {
+                        task,
+                        isDone: false,
+                        id: state.count +1
+                    }
+                ],
+                count: state.count +1,
+                isValid: false
+            }));
+        } else {
+            this.setState(state => ({isValid: true}))
+        }
+    };
+
+
     render() {
         return (
             <div className={styles.container}>
@@ -46,7 +67,7 @@ class App extends React.Component {
                 <div className={styles.subtitle}>
                     created by <strong> Evgeny Morozov! </strong>
                 </div>
-                <InputItem/>
+                <InputItem onClickAdd={this.onClickAdd} isValid={this.state.isValid}/>
                 <ItemList
                     items={this.state.items}
                     onClickDone={this.onClickDone}
