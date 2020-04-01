@@ -20,7 +20,7 @@ class App extends React.Component {
                 id: 3
             },
         ],
-        count: 6
+        count: 3
     };
 
     onClickDone = id => {
@@ -34,6 +34,11 @@ class App extends React.Component {
         this.setState({items: newItemList})
     };
 
+    onClickDelete = id => {
+        const newItemList = this.state.items.filter(item => item.id !== id);
+        this.setState({items: newItemList, count: this.state.count -1})
+    };
+
     render() {
         return (
             <div className={styles.container}>
@@ -42,7 +47,11 @@ class App extends React.Component {
                     created by <strong> Evgeny Morozov! </strong>
                 </div>
                 <InputItem/>
-                <ItemList items={this.state.items} onClickDone={this.onClickDone} />
+                <ItemList
+                    items={this.state.items}
+                    onClickDone={this.onClickDone}
+                    onClickDelete={this.onClickDelete}
+                />
 
                 <div className={styles.footer}>
                     <Footer count={this.state.count} />
