@@ -6,7 +6,7 @@ import styles from "../App/App.module.css";
 
 const ItemList = ({items, onClickDone, onClickDelete}) => (
     <ul>
-        {items.map(item => <li key={item.task}>
+        {items.map(item => <li key={item.id}>
             <Checkbox
                 checked={item.isDone}
                 onClick={() => onClickDone(item.id)}
