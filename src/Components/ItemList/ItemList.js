@@ -5,27 +5,31 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import styles from "../App/App.module.css";
 import PropTypes from "prop-types";
 
-const ItemList = ({items, onClickDone, onClickDelete}) => (
-    <ul>
-        {items.map(item => <li key={item.id}>
-            <Checkbox
-                checked={item.isDone}
-                onClick={() => onClickDone(item.id)}
-            />
-            <Item
-                task={item.task}
-                isDone={item.isDone}
-                id={item.id}
-            />
-            <DeleteIcon
-                className={styles.butdelete}
-                onClick={() => onClickDelete(item.id)}
-            />
-        </li>)}
 
-    </ul>
-);
+class ItemList extends React.Component {
+    render() {
+        const {items, onClickDone, onClickDelete} = this.props;
+        return(
+            <ul>
+                {items.map(item => <li key={item.id}>
+                    <Checkbox
+                        checked={item.isDone}
+                        onClick={() => onClickDone(item.id)}
+                    />
+                    <Item
+                        task={item.task}
+                        isDone={item.isDone}
+                        id={item.id}
+                    />
+                    <DeleteIcon
+                        className={styles.butdelete}
+                        onClick={() => onClickDelete(item.id)}
+                    />
+                </li>)}
 
+            </ul>);
+    }
+}
     ItemList.propTypes = {
         items: PropTypes.oneOfType ([
             PropTypes.array.isRequired,
@@ -35,7 +39,5 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (
         onClickDone: PropTypes.func.isRequired,
         onClickDelete: PropTypes.func.isRequired
     };
-
-
 
 export default ItemList;
