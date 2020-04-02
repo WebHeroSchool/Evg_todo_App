@@ -3,8 +3,9 @@ import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
 import styles from '../App/App.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import PropTypes from "prop-types";
 
-class ItemInput extends React.Component {
+class InputItem extends React.Component {
     state = {
             inputValue: ''
     };
@@ -46,4 +47,9 @@ class ItemInput extends React.Component {
     }
 }
 
-export default ItemInput;
+    InputItem.propTypes = {
+        onClickAdd: PropTypes.func.isRequired,
+        isValid: PropTypes.bool.isRequired
+    };
+
+export default InputItem;
