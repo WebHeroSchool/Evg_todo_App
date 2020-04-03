@@ -24,5 +24,11 @@ const ItemList = ({items, onClickDone, onClickDelete}) => (
 
     </ul>
 );
+    ItemList.defaultProps = {
+        items: [{
+            task: '',
+            id: 0
+        }]
+    };
 
 export default ItemList;
