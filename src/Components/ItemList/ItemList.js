@@ -7,6 +7,14 @@ import PropTypes from "prop-types";
 
 
 class ItemList extends React.Component {
+    componentDidMount() {
+        console.log(`(ItemList) Создан список: "${this.props.items}"`);
+    }
+
+    componentDidUpdate() {
+        console.log(`(ItemList) Список обновился! : "${this.props.items}"`);
+    }
+
     render() {
         const {items, onClickDone, onClickDelete} = this.props;
         return(
