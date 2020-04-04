@@ -1,118 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 *{
     margin: 0;
     padding: 0;
 }
 
-.container {
+body {
     background-color: bisque;
     width: 100vm;
     height: 100vh;
-    padding-left: 2%;
 }
 
-.title {
-    color: chocolate;
-    font-size: 2.9em;
-    font-family: 'Lobster', cursive;
-    margin: 0 15px 15px 25px;
-    text-align: center;
-    text-decoration: underline;
+.link {
+    text-decoration: none;
 }
 
-.subtitle {
-    text-align: right;
-    color: burlywood;
-    font-size: 1.3em;
-    text-shadow: 1.5px .5px blueviolet;
-    margin: 0 35% 5% 0;
-    line-height: 8px;
-    font-family: Rockwell;
+/* box styles*/
+
+.box {
+    width: 100%;
+    height: 100vh;
 }
 
-/* Styles for input*/
-.tasks {
-    width: 76%;
-    margin-bottom: 2%;
-    text-align: center;
-}
-
-.addbutton {
-    color: cornflowerblue;
-    border: transparent 8px solid;
+.menu {
     padding: 0;
-    margin: 0;
+    list-style: none;
 }
 
-.addbutton:hover {
-    transition: .2s;
-    border-radius: 50%;
-    background-color: rgba(123,104,238, 0.3);
-    color: coral;
+nav {
+    margin-left: 30%;
+    width: 10%;
+    height: 80%;
+    text-decoration: none;
+    outline: none;
+    padding: 6px 0;
+    color: #444;
+    float: left;
 }
 
-/*Styles for tasks list*/
-ul {
-    margin: 2% 30%;
+nav ul {
     list-style-type: none;
-    background-color: rgba(232,213,247,0.67);
-    border: darkgrey 2px solid;
-    border-radius: 4px;
-    width: 36%;
-    box-shadow: 10px 10px 5px darkgrey;
+    padding-left: 1%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
 }
 
-li {
-    margin: 4% 2% 4% 1%;
-    background-color: rgba(210,247,234,0.67);
-    border: gray 1px solid;
-    border-radius: 5px;
-    width: 90%;
-}
-
-li:hover {
-    background-color: rgba(165,172,163,0.46);
-}
-
-.butdelete {
-    color: dimgray;
-    border: transparent 5px solid;
-    float: right;
-}
-.butdelete:hover {
-    color:  firebrick;
-    transition: .2s;
-    border-radius: 50%;
-    background-color: rgba(21,125,255,0.22);
-}
-
-.item {
+nav ul li {
+    padding: 1%;
     font-size: 20px;
-    color: #3b277f;
 }
 
-.done {
-    text-decoration: line-through;
-    color: #46ba8b;
-}
-/*Styles for footer elements */
-.footer {
-    font-size: 25px;
-    font-family: 'Pacifico', cursive;
-    color: cornflowerblue;
-    text-decoration: underline;
-    border: 2px solid darkgrey;
-    width: 35.6%;
-    border-radius: 5px;
-    background-color: rgba(232,213,247,0.67);
-    box-shadow: 10px 10px 5px dimgray;
-    padding: 0 0 .5% .5%;
-    margin: 2% 30%;
+nav ul li:hover {
+    transition: .3s linear;
+    cursor: pointer;
 }
 
-.count {
-    color: red;
-    text-decoration: underline;
+.content {
+    margin: auto;
+    width: 55%;
+    height: 80%;
+    overflow-y: auto;
 }

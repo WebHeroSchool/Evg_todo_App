@@ -2,7 +2,7 @@ import React from "react";
 import Item from "../Item/Item";
 import Checkbox from "@material-ui/core/Checkbox";
 import DeleteIcon from '@material-ui/icons/Delete';
-import styles from "../App/App.module.css";
+import styles from "../TaskTodo/TaskTodo.module.css";
 import PropTypes from "prop-types";
 
 

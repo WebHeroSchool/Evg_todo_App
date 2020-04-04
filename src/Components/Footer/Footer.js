@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../App/App.module.css';
+import styles from '../TaskTodo/TaskTodo.module.css';
 import PropTypes from "prop-types";
 
 const Footer = ({count}) => (
