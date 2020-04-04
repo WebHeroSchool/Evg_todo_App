@@ -1,0 +1,22 @@
+*{
+     margin: 0;
+     padding: 0;
+ }
+
+.boxAbout {
+    background-color: rgba(232,213,247,0.67);
+    border: darkgrey 2px solid;
+    border-radius: 4px;
+    box-shadow: 10px 10px 5px darkgrey;
+    width: 70%;
+    height: 90%;
+    margin-top: 1%;
+    overflow-y: auto;
+}
+
+.info {
+    font-family: 'segoe print';
+    color: navy;
+    padding: 10px;
+    text-shadow: mediumslateblue 2px 3px 4px;
+}
