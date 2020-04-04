@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+.Header {
+    text-align: center;
+}
+
+.title {
+    color: chocolate;
+    font-size: 2.9em;
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.subtitle {
+    height: 15px;
+    color: burlywood;
+    font-size: 1.3em;
+    text-shadow: 1.5px .5px blueviolet;
+    margin: 10px 0 20px 100px;
+    text-align: center;
+    line-height: 5px;
+    font-family: Rockwell;
+}

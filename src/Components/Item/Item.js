@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from "../App/App.module.css";
+import styles from "../TaskTodo/TaskTodo.module.css";
 import PropTypes from "prop-types";
 
 class Item extends React.Component {

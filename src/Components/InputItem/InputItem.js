@@ -1,7 +1,7 @@
 import React from 'react';
 import Input from '@material-ui/core/Input';
 import TextField from '@material-ui/core/TextField';
-import styles from '../App/App.module.css';
+import styles from '../TaskTodo/TaskTodo.module.css';
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import PropTypes from "prop-types";
 
