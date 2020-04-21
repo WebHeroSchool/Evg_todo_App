@@ -8,8 +8,16 @@
 
 /* TaskTodo styles*/
 .container {
-    width: 60%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid darkgrey;
+    border-radius: 5px;
+    background-color: rgba(232,213,247,0.67);
+    box-shadow: 10px 10px 5px dimgray;
+    width: 51%;
     height: 100%;
+    margin: 0 auto;
 }
 
 .title {
@@ -31,42 +39,17 @@
     font-family: Rockwell;
 }
 
-/* Styles for input*/
-.tasks {
-    width: 100%;
-    margin-bottom: 2%;
-}
-
-.addbutton {
-    color: cornflowerblue;
-    border: transparent 8px solid;
-    padding: 0;
-    margin: 0;
-}
-
-.addbutton:hover {
-    transition: .2s;
-    border-radius: 50%;
-    background-color: rgba(123,104,238, 0.3);
-    color: coral;
-}
-
 /*Styles for tasks list*/
 ul {
     margin: 2% auto;
     list-style-type: none;
-    background-color: rgba(232,213,247,0.67);
-    border: darkgrey 2px solid;
-    border-radius: 4px;
-    box-shadow: 10px 10px 5px darkgrey;
 }
 
 li {
     margin: 4% 2% 4% 1%;
     background-color: rgba(210,247,234,0.67);
     border: gray 1px solid;
-    border-radius: 5px;
-    width: 90%;
+    border-radius: 15px;
 }
 
 li:hover {
@@ -100,10 +83,7 @@ li:hover {
     font-family: 'Pacifico', cursive;
     color: cornflowerblue;
     text-decoration: underline;
-    border: 2px solid darkgrey;
-    border-radius: 5px;
-    background-color: rgba(232,213,247,0.67);
-    box-shadow: 10px 10px 5px dimgray;
+
     padding: 0 0 .5% .5%;
     margin: 2% auto;
     width: 99%;

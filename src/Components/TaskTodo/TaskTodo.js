@@ -15,13 +15,10 @@ class TaskTodo extends React.Component {
                 isDone: false,
                 id: 2
             },
-            { task: 'Выполнить еще пару уроков по react!',
-                isDone: true,
-                id: 3
-            },
         ],
-        count: 3,
-        isValid: false
+        count: 2,
+        sortTask: 'Все',
+        isEmpty: false
     };
 
     onClickDone = id => {
@@ -52,26 +49,45 @@ class TaskTodo extends React.Component {
                     }
                 ],
                 count: state.count +1,
-                isValid: false
+                isEmpty: false
             }));
         } else {
-            this.setState(state => ({isValid: true}))
+            this.setState(state => ({isEmpty: true}))
         }
     };
 
+    onClickSort = sorting => this.setState({ sortTask: sorting });
+
     render() {
+        let sortingTasks;
+        switch (this.state.sortTask) {
+            case 'Завершенные':
+                sortingTasks = this.state.items.filter(item => item.isDone);
+                break;
+            case 'Незавершенные':
+                sortingTasks = this.state.items.filter(item => !item.isDone);
+                break;
+            case 'Все':
+                sortingTasks = this.state.items;
+                break;
+            default :
+                sortingTasks = this.state.items;
+        }
         return (
             <div className={styles.container}>
-                <InputItem onClickAdd={this.onClickAdd} isValid={this.state.isValid}/>
+                <div className={styles.footer}>
+                    <Footer
+                        items={this.state.items}
+                        onClickSort={this.onClickSort}
+                        sorting={this.state.sortTask}
+                    />
+                </div>
                 <ItemList
                     items={this.state.items}
                     onClickDone={this.onClickDone}
                     onClickDelete={this.onClickDelete}
                 />
-
-                <div className={styles.footer}>
-                    <Footer count={this.state.count} />
-                </div>
+                <InputItem onClickAdd={this.onClickAdd} isEmpty={this.state.isEmpty}/>
             </div>)
     }
 }

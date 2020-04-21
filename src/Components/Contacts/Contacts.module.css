@@ -4,14 +4,13 @@
 }
 
 .boxContact {
-    background-color: rgba(232,213,247,0.67);
-    border: darkgrey 2px solid;
-    border-radius: 4px;
-    box-shadow: 10px 10px 5px darkgrey;
-    width: 70%;
-    height: 90%;
-    margin-top: 1%;
-    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.baseInfo {
+    display: block;
 }
 
 h2, list p {
@@ -20,4 +19,100 @@ h2, list p {
     color: navy;
     padding: 10px;
     text-shadow: gold 2px 3px 4px;
+}
+
+.emailLink {
+    color: dimgray;
+    height: 16px;
+    padding-left: 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.emailLink:before {
+    content: '';
+    background: url(./img/mail.jpg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 0;
+    left: 0;
+}
+
+.emailLink:hover {
+    color: dodgerblue;
+}
+
+.phoneLink {
+    display: flex;
+    color: dimgray;
+    align-items: center;
+    margin: 15px 0 15px 0;
+    height: 16px;
+    padding-left: 20px;
+    position: relative;
+    text-decoration: none;
+}
+
+.phoneLink:before {
+    content: '';
+    background: url(./img/phonenumber.svg) no-repeat;
+    background-size: cover;
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    top: 0;
+    left: 0;
+}
+
+.phoneLink:hover {
+    color: dodgerblue;
+    background: url(./img/phonenumberHover.svg) no-repeat;
+}
+
+.socialInfo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.instagram {
+    display: inline-block;
+    background: url(./img/instagram.svg) no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.instagram:hover {
+    background: url(./img/instagramHover.svg) no-repeat;
+    background-size: cover;
+}
+
+.vk {
+    display: inline-block;
+    background: url(./img/vk.svg) no-repeat;
+    background-size: cover;
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+.vk:hover {
+    background: url(./img/vkHover.svg) no-repeat;
+    background-size: cover;
+}
+
+.github {
+    display: inline-block;
+    background: url(./img/githubsvg.svg) no-repeat;
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+}
+
+.github:hover {
+    background: url(./img/githubHover.svg) no-repeat;
+    background-size: cover;
 }

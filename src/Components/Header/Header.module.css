@@ -2,24 +2,32 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
 
 .Header {
-    text-align: center;
+    text-align: right;
+}
+
+.logo {
+    display: inline;
+    width: 9%;
+    float: left;
+    padding-left: 24%;
 }
 
 .title {
+    padding-right: 30%;
+    display: inline;
     color: chocolate;
-    font-size: 2.9em;
+    font-size: 2.5em;
     font-family: 'Lobster', cursive;
-    text-align: center;
     text-decoration: underline;
 }
 
 .subtitle {
-    height: 15px;
+    height: 16px;
+    padding-right: 5%;
     color: burlywood;
-    font-size: 1.3em;
+    font-size: 1.1em;
     text-shadow: 1.5px .5px blueviolet;
-    margin: 10px 0 20px 100px;
-    text-align: center;
+    margin: 12px 300px 20px 100px;
     line-height: 5px;
     font-family: Rockwell;
 }

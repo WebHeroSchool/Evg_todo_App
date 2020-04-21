@@ -1,8 +1,5 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
-import TextField from '@material-ui/core/TextField';
-import styles from '../TaskTodo/TaskTodo.module.css';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import styles from './Input.module.css';
 import PropTypes from "prop-types";
 
 class InputItem extends React.Component {
@@ -21,28 +18,23 @@ class InputItem extends React.Component {
     render() {
         return (
             <form className={styles.tasks}>
-                { this.props.isValid ? (
-                    <TextField
-                        error
-                        id="standard-error-helper-text"
-                        label="Заполните поле"
-                        defaultValue="Введите задачу"
-                        helperText="Поле не может быть пустым"
+                { this.props.isEmpty ? (
+                    <input
+                        className={styles.input_empty}
                         value={this.state.inputValue}
-                        onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
+                        onChange={event => this.setState({inputValue: event.target.value})}
                     />
                 ) : (
-                    <Input
+                    <input
+                        type='text'
                         placeholder="Введите новую задачу"
-                        inputProps={{ 'aria-label': 'description' }}
+                        className={styles.input}
                         value={this.state.inputValue}
-                        onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
+                        onChange={event => this.setState({inputValue: event.target.value})}
                     />
                 )
              }
-                <AddCircleOutlineIcon
-                    className={styles.addbutton}
-                    onClick={this.onIconClick}/>
+                <div className={styles.addbutton} onClick={this.onIconClick}> </div>
             </form>);
     }
 }

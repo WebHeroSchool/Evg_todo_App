@@ -3,55 +3,77 @@
      padding: 0;
  }
 
-a:link {
+/*a:link {
     text-decoration: none;
-    padding-left: 2%;
+    margin: 10px;
 }
 
 a:visited {
     color: darkmagenta;
     text-decoration: none;
-    padding-left: 2%;
+}*/
+
+h2,h3 {
+    font-family: 'Adobe Heiti Std R';
+    font-size: 40px;
+    color: black;
+    padding: 0;
+    margin: 0;
+    text-shadow: mediumslateblue 0 2px 2px;
 }
 
-
 .boxAbout {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100vm;
+    height: 100%;
+}
+
+.userBox {
+    width: 50%;
+    padding: 8px;
     background-color: rgba(232,213,247,0.67);
     border: darkgrey 2px solid;
-    border-radius: 4px;
-    box-shadow: 10px 10px 5px darkgrey;
-    width: 70%;
-    height: 90%;
-    margin-top: 1%;
-    overflow-y: auto;
+    border-radius: 6px;
+    box-shadow: 7px 7px 5px darkgrey;
 }
 
 .info {
-    text-align: center;
-    font-family: 'segoe print';
-    color: navy;
-    padding: 10px;
-    text-shadow: mediumslateblue 2px 3px 4px;
+    text-shadow: mediumslateblue 0 2px 2px;
 }
 
-.name {
-    text-decoration: underline;
+.user {
+    display: flex;
+    flex-direction: row;
+}
+
+.info_user {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    margin-left: 4%;
+}
+
+.repos {
+    width: 50%;
+    margin-top: 15px;
+    padding: 8px;
+    background-color: rgba(232,213,247,0.67);
+    border: darkgrey 2px solid;
+    border-radius: 6px;
+    box-shadow: 7px 7px 5px darkgrey;
+}
+
+.repoList {
+    list-style-type: none;
+    margin-left: 2%;
 }
 
 .avatar {
-    width: 25%;
-    height: 25%;
-}
-
-h3 {
-    margin-top: 2%;
-    text-decoration: underline;
-    font-size: 23px;
-}
-
-ol {
-    text-align: left;
-    margin-left: 4%;
+    border-radius: 10px;
+    width: 20%;
+    height: 20%;
 }
 
 /* styles for Preloader */
@@ -61,9 +83,9 @@ ol {
     display: block;
     width: 50px;
     height: 50px;
-    border: 10px;
+    border: 30px;
     border-radius: 50%;
-    background: dodgerblue;
+    background: mediumslateblue;
     box-shadow: 0 0 0 rgba(204,169,44, 0.4);
     animation: pulse 1s infinite;
 }
