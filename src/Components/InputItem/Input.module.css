@@ -1,38 +1,76 @@
-.input {
-    border: 1px solid #CCC;
-    box-sizing: border-box;
-    border-radius: 41px;
-    height: 36px;
-    width: 100%;
-    outline: none;
-    padding: 0 12px;
-}
-
-.input_empty {
-    border: 1px solid red;
-    background-color: rgba(231,27,22,0.27);
-    box-sizing: border-box;
-    border-radius: 41px;
-    height: 36px;
-    width: 100%;
-    outline: none;
-    padding: 0 12px;
-}
-
 .tasks {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: auto;
+    position: relative;
+    padding-left: 10px;
+    width: 90%;
+}
+
+.input_box {
+    margin-right: 10px;
+    flex-grow: 1;
+}
+
+.input {
+    border: 1px solid gray;
+    box-sizing: border-box;
+    border-radius: 15px;
+    height: 36px;
+    width: 100%;
+    outline: none;
+    padding: 0 12px;
+    background-color: rgba(210,247,234,0.67);
+}
+
+.input_empty,
+.input_exist {
     position: relative;
 }
 
+.input_exist::before {
+    content: 'Такая задача уже есть в вашем списке. Введите другое название';
+    color: #fff;
+    background: #356EFF;
+    border-radius: 6px;
+    font: normal normal 14px/16px 'Roboto';
+    height: auto;
+    max-width: 240px;
+    padding: 8px 11px;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+
+.input_empty::before {
+    content: 'Поле должно быть заполнено!';
+    color: #fff;
+    background: #356EFF;
+    border-radius: 6px;
+    font: normal normal 14px/16px 'Roboto';
+    height: auto;
+    width: auto;
+    padding: 8px 11px;
+    position: absolute;
+    bottom: 50px;
+    left: 20px;
+}
+
+.input_empty:after,
+.input_exist:after {
+    content: '';
+    position: absolute;
+    border: 10px solid transparent;
+    border-top-color: #356EFF;
+    bottom: 31px;
+    left: 40px;
+}
 
 .addbutton {
-    margin-left: 20px;
+    margin: 0 10px 0 10px;
     background: url(./img/plus.svg) no-repeat;
-    height: 50px;
-    width: 50px;
+    height: 45px;
+    width: 45px;
 }
 
 .addbutton:hover {

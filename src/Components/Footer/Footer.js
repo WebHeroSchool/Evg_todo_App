@@ -9,6 +9,7 @@ const Footer = ({items, onClickSort, sortTask}) => {
 
     return(
         <div className={styles.footer_menu}>
+            <h1 className={styles.footer_title}> Список моих дел </h1>
             <button
                 className={classnames({
                     [styles.button]: true,
@@ -30,6 +31,10 @@ const Footer = ({items, onClickSort, sortTask}) => {
                 <span className={styles.task_count}> {uncompletedTasks} </span>
             </button>
             <button
+                className={classnames({
+                    [styles.button]: true,
+                    [styles.selected]: sortTask === 'Все'
+                })}
                 onClick={()=> onClickSort('Все')
                 }>
                 Все

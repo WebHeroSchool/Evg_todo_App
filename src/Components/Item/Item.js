@@ -1,23 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
-import styles from "../TaskTodo/TaskTodo.module.css";
+import styles from './Item.module.css';
 import PropTypes from "prop-types";
 
 class Item extends React.Component {
-    componentDidMount() {
-        this.timerID = setInterval(() =>
-        console.log(`(Item)Добавлена задача: "${this.props.task}"`), 1000);
-    }
-
-    componentDidUpdate() {
-        console.log('(Item) Компонент обновился!');
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.timerID);
-        console.log('(Item)Компонент был удален!');
-    }
-
     render() {
 
         const {task, isDone} = this.props;

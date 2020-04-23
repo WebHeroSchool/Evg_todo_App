@@ -39,57 +39,18 @@
     font-family: Rockwell;
 }
 
-/*Styles for tasks list*/
-ul {
+/*Styles for Itemlist block*/
+.tasks_item_list {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
     margin: 2% auto;
-    list-style-type: none;
+    width: 95%;
+    height: 50vh;
 }
 
-li {
-    margin: 4% 2% 4% 1%;
-    background-color: rgba(210,247,234,0.67);
-    border: gray 1px solid;
-    border-radius: 15px;
-}
-
-li:hover {
-    background-color: rgba(165,172,163,0.46);
-}
-
-.butdelete {
-    color: dimgray;
-    border: transparent 5px solid;
-    float: right;
-}
-.butdelete:hover {
-    color:  firebrick;
-    transition: .2s;
-    border-radius: 50%;
-    background-color: rgba(21,125,255,0.22);
-}
-
-.item {
-    font-size: 20px;
-    color: #3b277f;
-}
-
-.done {
-    text-decoration: line-through;
-    color: #46ba8b;
-}
-/*Styles for footer elements */
+/*Styles for footer block */
 .footer {
-    font-size: 25px;
-    font-family: 'Pacifico', cursive;
-    color: cornflowerblue;
-    text-decoration: underline;
-
-    padding: 0 0 .5% .5%;
-    margin: 2% auto;
-    width: 99%;
-}
-
-.count {
-    color: red;
-    text-decoration: underline;
+    width: 100%;
+    margin-right: 5%;
 }

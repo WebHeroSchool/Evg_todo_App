@@ -22,7 +22,7 @@ const RepoList = ({repoList, onClickNext, onClickBack, firstRepo, lastRepo }) =>
                 <div>
                     <ol className={styles.repo_list}>
                         {repoList.slice(firstRepo, lastRepo).map(repo => (
-                            <li key={repo.id} className={styles.repo_name_wrap}>
+                            <li key={repo.id}>
                                 <Repository
                                     url={repo.html_url}
                                     name={repo.name}

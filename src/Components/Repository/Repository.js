@@ -18,9 +18,9 @@ const Respository= ({url, name, forks_count, stargazers_count, language, updated
         <div className={styles.repo_about}>
             <span className={classnames({
                 [styles.language]: true,
-                [styles.htm_circle]: language === 'HTML',
-                [styles.css_cirlce]: language === 'CSS',
-                [styles.js_cirlce]: language === 'JavaScript'
+                [styles.html_circle]: language === 'HTML',
+                [styles.css_circle]: language === 'CSS',
+                [styles.js_circle]: language === 'JavaScript'
             })}
             >
                 {language}

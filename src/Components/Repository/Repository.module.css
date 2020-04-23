@@ -1,0 +1,80 @@
+.repo_name {
+    margin: 1% 0 0 2%;
+    font-size: 16px;
+}
+
+.repo_name_link {
+    color: black;
+    text-decoration: none;
+}
+
+.repo_name_link:hover {
+    color: #356EFF;
+}
+
+.repo_about {
+    display: flex;
+    margin: 1% 0 1% 2%;
+    color: #51534f;
+    font-size: 14px;
+}
+
+.language,
+.stargazers,
+.forks,
+.updated {
+    margin-right: 4%;
+    position: relative;
+}
+
+.language {
+    padding-left: 20px;
+    width: 100px;
+}
+
+.stargazers,
+.forks {
+    text-align: right;
+    width: 28px;
+}
+
+.stargazers:before,
+.forks:before {
+    content: '';
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+}
+
+.stargazers:before {
+    background: url(./img/star.png) no-repeat;
+}
+
+.forks:before {
+    background: url(./img/forks.png) no-repeat;
+}
+
+.html_circle:before,
+.css_circle:before,
+.js_circle:before {
+    content: '';
+    border-radius: 50%;
+    height: 16px;
+    width: 16px;
+    position: absolute;
+    left: 0;
+}
+
+
+.html_circle:before {
+    background: #e34c26;
+}
+
+.css_circle:before {
+    background: #563d7c;
+}
+
+.js_circle:before {
+    background: #f1e05a;
+}
