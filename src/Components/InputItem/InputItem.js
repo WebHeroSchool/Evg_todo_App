@@ -1,8 +1,6 @@
 import React from 'react';
-import Input from '@material-ui/core/Input';
-import TextField from '@material-ui/core/TextField';
-import styles from '../TaskTodo/TaskTodo.module.css';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import styles from './Input.module.css';
+import classnames from 'classnames';
 import PropTypes from "prop-types";
 
 class InputItem extends React.Component {
@@ -19,37 +17,31 @@ class InputItem extends React.Component {
     };
 
     render() {
+        const {isEmpty, isExist} = this.props;
         return (
             <form className={styles.tasks}>
-                { this.props.isValid ? (
-                    <TextField
-                        error
-                        id="standard-error-helper-text"
-                        label="Заполните поле"
-                        defaultValue="Введите задачу"
-                        helperText="Поле не может быть пустым"
-                        value={this.state.inputValue}
-                        onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
-                    />
-                ) : (
-                    <Input
+                <div className={classnames({
+                    [styles.input_box]: true,
+                    [styles.input_empty]: isEmpty,
+                    [styles.input_exist]: isExist
+                })}>
+                    <input
+                        type='text'
                         placeholder="Введите новую задачу"
-                        inputProps={{ 'aria-label': 'description' }}
+                        className={styles.input}
                         value={this.state.inputValue}
-                        onChange={event => this.setState({inputValue: event.target.value.toUpperCase()})}
+                        onChange={event => this.setState({inputValue: event.target.value})}
                     />
-                )
-             }
-                <AddCircleOutlineIcon
-                    className={styles.addbutton}
-                    onClick={this.onIconClick}/>
+                </div>
+                <div className={styles.addbutton} onClick={this.onIconClick}> </div>
             </form>);
     }
 }
 
     InputItem.propTypes = {
         onClickAdd: PropTypes.func.isRequired,
-        isValid: PropTypes.bool.isRequired
+        isEmpty: PropTypes.bool.isRequired,
+        isExist: PropTypes.bool.isRequired
     };
 
 export default InputItem;

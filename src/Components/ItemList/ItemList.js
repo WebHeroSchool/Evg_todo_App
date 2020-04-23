@@ -1,27 +1,20 @@
 import React from "react";
 import Item from "../Item/Item";
 import Checkbox from "@material-ui/core/Checkbox";
-import DeleteIcon from '@material-ui/icons/Delete';
-import styles from "../TaskTodo/TaskTodo.module.css";
+import styles from './ItemList.module.css';
 import PropTypes from "prop-types";
 
 
 class ItemList extends React.Component {
-    componentDidMount() {
-        console.log(`(ItemList) Создан список: "${this.props.items}"`);
-    }
-
-    componentDidUpdate() {
-        console.log(`(ItemList) Список обновился! : "${this.props.items}"`);
-    }
 
     render() {
-        const {items, onClickDone, onClickDelete} = this.props;
+        const {sort, onClickDone, onClickDelete} = this.props;
         return(
-            <ul>
-                {items.map(item => <li key={item.id}>
+            <ul className={styles.task_list}>
+                {sort.map(item => <li key={item.id} className={styles.task_list_item}>
                     <Checkbox
                         checked={item.isDone}
+                        color='primary'
                         onClick={() => onClickDone(item.id)}
                     />
                     <Item
@@ -29,8 +22,11 @@ class ItemList extends React.Component {
                         isDone={item.isDone}
                         id={item.id}
                     />
-                    <DeleteIcon
-                        className={styles.butdelete}
+                    <div
+                        className={styles.but_edit}
+                    />
+                    <div
+                        className={styles.but_delete}
                         onClick={() => onClickDelete(item.id)}
                     />
                 </li>)}

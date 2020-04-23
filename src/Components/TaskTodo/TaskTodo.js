@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import InputItem from '../InputItem/InputItem'
 import ItemList from "../ItemList/ItemList";
 import Footer from "../Footer/Footer";
 import styles from './TaskTodo.module.css';
 
-class TaskTodo extends React.Component {
-    state= {
+const TaskTodo = () => {
+   const initialState = {
         items : [
             { task: 'Приготовить завтрак!',
                 isDone: true,
@@ -15,65 +15,102 @@ class TaskTodo extends React.Component {
                 isDone: false,
                 id: 2
             },
-            { task: 'Выполнить еще пару уроков по react!',
-                isDone: true,
-                id: 3
-            },
         ],
-        count: 3,
-        isValid: false
+        count: 2,
+        sortTask: 'Все',
+        isEmpty: false,
+        isExist: false,
+        isEdited: false
     };
 
-    onClickDone = id => {
-        const newItemList = this.state.items.map( item => {
+   const [items, setItems] = useState(initialState.items);
+   const [count, setCount] = useState(initialState.count);
+   const [isEmpty, setEmpty] = useState(initialState.isEmpty);
+   const [isExist, setExist] = useState(initialState.isExist);
+   const [sortTask, setSort] = useState(initialState.sortTask);
+
+    useEffect(() => {
+        console.log('Component "items" is mounted!');
+    }, [count]);
+
+   useEffect(() => {
+       console.log(' Item is updated');
+   });
+
+    const onClickDone = id => {
+        const newItemList = items.map( item => {
             const newItem = {...item};
             if (item.id === id) {
                 newItem.isDone = !item.isDone;
             }
             return newItem;
         });
-        this.setState({items: newItemList})
+        setItems(newItemList)
     };
 
-    onClickDelete = id => {
-        const newItemList = this.state.items.filter(item => item.id !== id);
-        this.setState({items: newItemList, count: this.state.count -1})
+    const onClickDelete = id => {
+        const newItemList = items.filter(item => item.id !== id);
+        setItems(newItemList);
+        setCount((count) => count - 1)
     };
 
-    onClickAdd = task => {
-        if (task !== '') {
-            this.setState(state => ({
-                items: [
-                    ...state.items,
-                    {
-                        task,
-                        isDone: false,
-                        id: state.count +1
-                    }
-                ],
-                count: state.count +1,
-                isValid: false
-            }));
+    const onClickAdd = task => {
+        if (task !== '' && !items.some(item => item.task === task)) {
+            const newItems = [
+                ...items,
+                {
+                    task,
+                    isDone: false,
+                    id: count +1
+                }
+            ];
+            setItems(newItems);
+            setCount((count) => count + 1);
+            setEmpty(false);
+            setExist(false)
         } else {
-            this.setState(state => ({isValid: true}))
+            setEmpty(true);
+            setExist(true);
         }
     };
 
-    render() {
+   const onClickEdit = taskedit => {};
+   const onClickSort = sorting => setSort(sorting);
+
+        let sortingTasks;
+        switch (sortTask) {
+            case 'Завершенные':
+                sortingTasks = items.filter(item => item.isDone);
+                break;
+            case 'Незавершенные':
+                sortingTasks = items.filter(item => !item.isDone);
+                break;
+            case 'Все':
+                sortingTasks = items;
+                break;
+            default :
+                sortingTasks = items;
+        }
         return (
             <div className={styles.container}>
-                <InputItem onClickAdd={this.onClickAdd} isValid={this.state.isValid}/>
-                <ItemList
-                    items={this.state.items}
-                    onClickDone={this.onClickDone}
-                    onClickDelete={this.onClickDelete}
-                />
-
                 <div className={styles.footer}>
-                    <Footer count={this.state.count} />
+                    <Footer
+                        items={items}
+                        onClickSort={onClickSort}
+                        sorting={sortTask}
+                    />
                 </div>
+                <div className={styles.tasks_item_list}>
+                <ItemList
+                    sort={sortingTasks}
+                    sortValue={sortTask}
+                    onClickDone={onClickDone}
+                    onClickDelete={onClickDelete}
+                />
+                </div>
+                <InputItem onClickAdd={onClickAdd} isEmpty={isEmpty} isExist={isExist}/>
+
             </div>)
-    }
-}
+    };
 
 export default TaskTodo;

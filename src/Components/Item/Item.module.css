@@ -1,0 +1,10 @@
+.item {
+    font-size: 20px;
+    color: #3b277f;
+    width: 90%;
+}
+
+.done {
+    text-decoration: line-through;
+    color: #46ba8b;
+}
