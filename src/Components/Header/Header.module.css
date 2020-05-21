@@ -31,3 +31,54 @@
     line-height: 5px;
     font-family: Rockwell;
 }
+
+@media (min-width: 320px) and (max-width: 409px) {
+    .logo {
+        width: 30%;
+        padding-left: 5%;
+    }
+
+    .title {
+        padding-right: 22%;
+        font-size: 1.5em;
+    }
+
+    .subtitle {
+        font-size: 0.7em;
+        margin: 2% 0 5% 15%;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 767px) {
+    .logo {
+        width: 31%;
+        padding-left: 5%;
+    }
+
+    .title {
+        padding-right: 19%;
+        font-size: 1.8em;
+    }
+
+    .subtitle {
+        font-size: 0.8em;
+        margin: 2% 0 5% 15%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .logo {
+        width: 30%;
+        padding-left: 5%;
+    }
+
+    .title {
+        padding-right: 18%;
+        font-size: 3.5em;
+    }
+
+    .subtitle {
+        font-size: 1.5em;
+        margin: 2% 0 5% 0;
+    }
+}

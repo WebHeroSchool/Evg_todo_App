@@ -28,7 +28,11 @@ class InputItem extends React.Component {
                     <input
                         type='text'
                         placeholder="Введите новую задачу"
-                        className={styles.input}
+                        className={classnames({
+                            [styles.input]: true,
+                            [styles.input_empty]: (isEmpty),
+                            [styles.input_exist]: (isExist)
+                        })}
                         value={this.state.inputValue}
                         onChange={event => this.setState({inputValue: event.target.value})}
                     />

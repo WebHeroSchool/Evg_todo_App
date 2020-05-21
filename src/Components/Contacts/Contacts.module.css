@@ -13,14 +13,6 @@
     display: block;
 }
 
-h2, list p {
-    font-size: 30px;
-    font-family: 'segoe print';
-    color: navy;
-    padding: 10px;
-    text-shadow: gold 2px 3px 4px;
-}
-
 .emailLink {
     color: dimgray;
     height: 16px;
@@ -88,6 +80,7 @@ h2, list p {
 .instagram:hover {
     background: url(./img/instagramHover.svg) no-repeat;
     background-size: cover;
+    transition: 0.3s;
 }
 
 .vk {
@@ -102,6 +95,7 @@ h2, list p {
 .vk:hover {
     background: url(./img/vkHover.svg) no-repeat;
     background-size: cover;
+    transition: 0.3s;
 }
 
 .github {
@@ -115,4 +109,60 @@ h2, list p {
 .github:hover {
     background: url(./img/githubHover.svg) no-repeat;
     background-size: cover;
+    transition: 0.3s;
+}
+
+@media (min-width: 320px) and (max-width: 409px) {
+    .boxContact {
+        margin-top: 12px;
+    }
+
+    .phoneLink {
+        margin: 5% 0 10% 0;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 767px) {
+    .boxContact {
+        margin-top: 12px;
+    }
+
+    .emailLink {
+        padding-left: 22px;
+    }
+
+    .phoneLink::before, .emailLink:before {
+        height: 17px;
+        width: 17px;
+    }
+
+    .phoneLink {
+        margin: 5% 0 10% 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .boxContact {
+        margin-top: 15px;
+    }
+
+    .emailLink {
+        padding-left: 45px;
+    }
+
+    .phoneLink::before, .emailLink:before {
+        height: 30px;
+        width: 30px;
+    }
+
+    .phoneLink {
+        margin: 5% 0 10% 0;
+        padding: 7px 0 0 45px;
+    }
+
+    .instagram, .vk, .github {
+        margin-right: 15px;
+        width: 40px;
+        height: 40px;
+    }
 }
