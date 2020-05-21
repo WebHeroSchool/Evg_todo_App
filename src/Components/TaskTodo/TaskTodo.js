@@ -21,12 +21,10 @@ const TaskTodo = () => {
    const [count, setCount] = useState(initialState.count);
    const [isEmpty, setEmpty] = useState(initialState.isEmpty);
    const [isExist, setExist] = useState(initialState.isExist);
-   const [isEdited, setEdited] = useState(initialState.isEdited);
    const [sortTask, setSort] = useState(initialState.sortTask);
    const [readOnly, setReadOnly] = useState(initialState.readOnly);
 
     const onClickDone = id => {
-        if (!isEdited) {
         const newItemList = items.map( item => {
             const newItem = {...item};
             if (item.id === id) {
@@ -35,7 +33,6 @@ const TaskTodo = () => {
             return newItem;
         });
         setItems(newItemList)
-    }
    };
     const onClickDelete = id => {
         const newItemList = items.filter(item => item.id !== id);
@@ -66,17 +63,17 @@ const TaskTodo = () => {
         }
     };
 
-   const onClickEdit = (id, isDone) => {
-       if(!isDone) {
+   const onClickEdit = (id) => {
+       console.log(id);
            const newItemList = items.map( item => {
+               console.log(item);
                if (item.id === id) {
+                   console.log(item.readOnly);
                    item.readOnly = !item.readOnly;
                }
                return item;
            });
            setItems(newItemList);
-           setEdited(true);
-       }
    };
 
    const onChangeItem = (id, newValue) => {
@@ -89,7 +86,6 @@ const TaskTodo = () => {
        });
        setTimeout(() => {
            setItems(newItemList);
-           setEdited(false);
            setReadOnly(true);
        }, 200);
    };

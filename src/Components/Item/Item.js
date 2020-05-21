@@ -17,6 +17,7 @@ class Item extends React.Component {
    render() {
        const {id, readOnly, isDone, isExist, onChangeItem} = this.props;
        const {task} = this.state;
+       console.log("render");
        return(
            <input
                type='text'
@@ -28,9 +29,8 @@ class Item extends React.Component {
                    })}
                value={task}
                id={id}
-               readOnly={readOnly}
+               disabled={readOnly}
                onChange={this.changeTask}
-               onBlur={() => onChangeItem (!isExist)}
            />);
    }
 }
