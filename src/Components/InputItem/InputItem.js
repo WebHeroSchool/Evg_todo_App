@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Input.module.css';
-import classnames from 'classnames';
+import React from "react";
+import styles from "./Input.module.css";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 
 class InputItem extends React.Component {
@@ -12,7 +12,6 @@ class InputItem extends React.Component {
         this.setState({
             inputValue: ''
         });
-
             this.props.onClickAdd(this.state.inputValue);
     };
 
@@ -30,8 +29,8 @@ class InputItem extends React.Component {
                         placeholder="Введите новую задачу"
                         className={classnames({
                             [styles.input]: true,
-                            [styles.input_empty]: (isEmpty),
-                            [styles.input_exist]: (isExist)
+                            [styles.input_empty]: isEmpty,
+                            [styles.input_exist]: isExist
                         })}
                         value={this.state.inputValue}
                         onChange={event => this.setState({inputValue: event.target.value})}

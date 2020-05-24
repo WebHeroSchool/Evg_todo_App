@@ -1,14 +1,14 @@
-import React, {useState} from 'react';
-import InputItem from '../InputItem/InputItem'
+import React, {useState} from "react";
+import InputItem from "../InputItem/InputItem";
 import ItemList from "../ItemList/ItemList";
 import Footer from "../Footer/Footer";
-import styles from './TaskTodo.module.css';
+import styles from "./TaskTodo.module.css";
 
 const TaskTodo = () => {
    const initialState = {
         items :
             JSON.parse(localStorage.getItem('editedList') ||
-            '[{"task": "Задача №1", "isDone": true, "id": 1, "readOnly":true}, {"task": "Обязательно нужно что-то сделать!", "isDone": false, "id": 2, "readOnly": true}]'
+            '[{"task": "Задача №1", "isDone": true, "id": 1, "disabled": true}, {"task": "Обязательно нужно что-то сделать!", "isDone": false, "id": 2, "disabled": true}]'
             ),
         count: 2,
         sortTask: 'Все',
@@ -21,12 +21,9 @@ const TaskTodo = () => {
    const [count, setCount] = useState(initialState.count);
    const [isEmpty, setEmpty] = useState(initialState.isEmpty);
    const [isExist, setExist] = useState(initialState.isExist);
-   const [isEdited, setEdited] = useState(initialState.isEdited);
    const [sortTask, setSort] = useState(initialState.sortTask);
-   const [readOnly, setReadOnly] = useState(initialState.readOnly);
 
     const onClickDone = id => {
-        if (!isEdited) {
         const newItemList = items.map( item => {
             const newItem = {...item};
             if (item.id === id) {
@@ -35,8 +32,8 @@ const TaskTodo = () => {
             return newItem;
         });
         setItems(newItemList)
-    }
    };
+
     const onClickDelete = id => {
         const newItemList = items.filter(item => item.id !== id);
         setItems(newItemList);
@@ -46,14 +43,14 @@ const TaskTodo = () => {
     const onClickAdd = task => {
         if (task !== '' && !items.some(item => item.task === task)) {
             const id = items.length > 0?
-                items[items.length-1].id+1: 0;
+                items[items.length-1].id + 1: 0;
             const newItems = [
                 ...items,
                 {
                     task,
                     isDone: false,
                     id: id,
-                    readOnly: true
+                    disabled: true
                 }
             ];
             setItems(newItems);
@@ -66,32 +63,25 @@ const TaskTodo = () => {
         }
     };
 
-   const onClickEdit = (id, isDone) => {
-       if(!isDone) {
+   const onClickEdit = id => {
            const newItemList = items.map( item => {
                if (item.id === id) {
-                   item.readOnly = !item.readOnly;
+                   item.disabled = !item.disabled;
                }
                return item;
            });
            setItems(newItemList);
-           setEdited(true);
-       }
    };
 
-   const onChangeItem = (id, newValue) => {
+   const onChangeItem = (id, newTask) => {
        const newItemList = items.map(item => {
-           const newItem = {...item};
+           const newTaskValue = {...item};
            if (item.id === id) {
-               newItem.task = newValue.currentTarget.value;
+               newTaskValue.task = newTask;
            }
-           return newItem;
+           return newTaskValue;
        });
-       setTimeout(() => {
            setItems(newItemList);
-           setEdited(false);
-           setReadOnly(true);
-       }, 200);
    };
 
    const onClickSort = sorting => setSort(sorting);
@@ -125,7 +115,7 @@ const TaskTodo = () => {
                 <div className={styles.tasks_item_list}>
                 <ItemList
                     task = {items.task}
-                    readOnly = {readOnly}
+                    disabled = {items.disabled}
                     sort={sortingTasks}
                     sortValue={sortTask}
                     onClickDone={onClickDone}

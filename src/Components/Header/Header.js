@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Header.module.css';
-import logo from './img/logo.png';
+import React from "react";
+import styles from "./Header.module.css";
+import logo from "./img/logo.png";
 
 const Header = () => (
     <div className={styles.Header}>

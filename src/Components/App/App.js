@@ -1,8 +1,8 @@
-import React from 'react';
-import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
-import TaskTodo from '../TaskTodo/TaskTodo';
+import React from "react";
+import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import TaskTodo from "../TaskTodo/TaskTodo";
 import About from "../About/About";
-import styles from './App.module.css';
+import styles from "./App.module.css";
 import Header from "../Header/Header";
 
 const App = () =>

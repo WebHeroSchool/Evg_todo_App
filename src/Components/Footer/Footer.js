@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Footer.module.css';
-import classnames from 'classnames';
+import React from "react";
+import styles from "./Footer.module.css";
+import classnames from "classnames";
 
 const Footer = ({items, onClickSort, sorting}) => {
     const allTasks = items.length;

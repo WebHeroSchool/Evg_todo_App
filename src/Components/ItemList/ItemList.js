@@ -1,8 +1,8 @@
 import React from "react";
 import Item from "../Item/Item";
 import Checkbox from "@material-ui/core/Checkbox";
-import styles from './ItemList.module.css';
-import classnames from 'classnames';
+import styles from "./ItemList.module.css";
+import classnames from "classnames";
 import PropTypes from "prop-types";
 
 
@@ -29,20 +29,27 @@ class ItemList extends React.Component {
                     />
                     <Item
                         task={item.task}
-                        readOnly = {item.readOnly}
+                        disabled = {item.disabled}
                         isDone={item.isDone}
                         id={item.id}
-                        onChangeItem = {onChangeItem}
+                        onChangeItem={onChangeItem}
                     />
                     <div
                         className={
                             classnames({
                                 [styles.but_edit]: true,
-                                [styles.edit_mode]: !item.readOnly,
-                                [styles.but_edit_done]: item.isDone
+                                [styles.but_edit_done]: item.isDone + !item.disabled
                             })}
                         onClick={() => onClickEdit(item.id)}
                     />
+                    <div
+                        className={
+                            classnames({
+                                [styles.edit_mode_off]: item.disabled + item.isDone,
+                                [styles.edit_mode_on]: !item.disabled
+                            })}
+                        onClick={() => onClickEdit(item.id)}
+                        />
                     <div
                         className={styles.but_delete}
                         onClick={() => onClickDelete(item.id)}
@@ -59,7 +66,8 @@ class ItemList extends React.Component {
             PropTypes.string.isRequired
         ]),
         onClickDone: PropTypes.func.isRequired,
-        onClickDelete: PropTypes.func.isRequired
+        onClickDelete: PropTypes.func.isRequired,
+        onChangeItem: PropTypes.func.isRequired
     };
 
 export default ItemList;

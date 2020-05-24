@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import Contacts from "../Contacts/Contacts";
-import styles from './About.module.css';
-import {Octokit} from '@octokit/rest';
+import styles from "./About.module.css";
+import {Octokit} from "@octokit/rest";
 import RepoList from "../RepoList/RepoList";
 
 const octokit = new Octokit();

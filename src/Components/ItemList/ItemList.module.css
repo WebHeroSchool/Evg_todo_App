@@ -47,15 +47,20 @@
     opacity: 0.8;
 }
 
-.edit_mode {
-    background: url(./img/edit_mode_done.png) no-repeat;
-    padding: 0 25px 18px 0;
-    width: 12px;
-    height: 12px;
+.edit_mode_off {
+    display: none;
 }
 
-.edit_mode:hover {
-    background: url(./img/edit_mode_hover.png) no-repeat;
+.edit_mode_on {
+    background: url(./img/edit_mode_done.svg) no-repeat;
+    padding-right: 10px;
+    margin-left: 5px;
+    width: 20px;
+    height: 20px;
+}
+
+.edit_mode_on:hover {
+    background: url(./img/edit_mode_hover.svg) no-repeat;
     opacity: 0.8;
 }
 
@@ -96,7 +101,7 @@
         font-size: 15px;
     }
 
-    .but_edit, .but_delete {
+    .but_edit, .edit_mode_on, .but_delete {
         width: 17px;
         height: 17px;
     }
@@ -125,7 +130,7 @@
         font-size: 17px;
     }
 
-    .but_edit, .but_delete {
+    .but_edit, .edit_mode_on, .but_delete {
         width: 17px;
         height: 17px;
     }
@@ -154,7 +159,7 @@
         font-size: 20px;
     }
 
-    .but_edit, .but_delete {
+    .but_edit, .edit_mode_on, .but_delete {
         width: 25px;
         height: 25px;
     }

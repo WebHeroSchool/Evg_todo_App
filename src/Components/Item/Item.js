@@ -1,6 +1,6 @@
-import React from 'react';
-import classnames from 'classnames';
-import styles from './Item.module.css';
+import React from "react";
+import classnames from "classnames";
+import styles from "./Item.module.css";
 import PropTypes from "prop-types";
 
 class Item extends React.Component {
@@ -8,15 +8,15 @@ class Item extends React.Component {
         task: this.props.task
     };
 
-   changeTask = e => {
+    onChangeTask = e => {
        this.setState ({
            task: e.currentTarget.value
        });
+        this.props.onChangeItem(this.props.id, e.currentTarget.value);
     };
 
    render() {
-       const {id, readOnly, isDone, isExist, onChangeItem} = this.props;
-       const {task} = this.state;
+       const {id, disabled, isDone} = this.props;
        return(
            <input
                type='text'
@@ -24,13 +24,12 @@ class Item extends React.Component {
                    classnames({
                        [styles.item]: true,
                        [styles.done]: isDone,
-                       [styles.edit_mode]: !readOnly && !isDone
+                       [styles.edit_mode]: !disabled && !isDone
                    })}
-               value={task}
+               value={this.state.task}
                id={id}
-               readOnly={readOnly}
-               onChange={this.changeTask}
-               onBlur={() => onChangeItem (!isExist)}
+               disabled={disabled}
+               onChange={this.onChangeTask}
            />);
    }
 }
