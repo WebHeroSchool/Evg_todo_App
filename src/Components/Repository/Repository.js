@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './Repository.module.css';
-import classnames from 'classnames';
+import React from "react";
+import styles from "./Repository.module.css";
+import classnames from "classnames";
 
 
 const Respository= ({url, name, forks_count, stargazers_count, language, updated_at}) => (

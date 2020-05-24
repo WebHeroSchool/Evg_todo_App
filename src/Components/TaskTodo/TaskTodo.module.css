@@ -20,25 +20,6 @@
     margin: 0 auto;
 }
 
-.title {
-    color: chocolate;
-    font-size: 2.9em;
-    font-family: 'Lobster', cursive;
-    margin: 0 15px 15px 25px;
-    text-align: center;
-    text-decoration: underline;
-}
-
-.subtitle {
-    text-align: right;
-    color: burlywood;
-    font-size: 1.3em;
-    text-shadow: 1.5px .5px blueviolet;
-    margin: 0 35% 5% 0;
-    line-height: 8px;
-    font-family: Rockwell;
-}
-
 /*Styles for Itemlist block*/
 .tasks_item_list {
     display: flex;
@@ -53,4 +34,67 @@
 .footer {
     width: 100%;
     margin-right: 5%;
+}
+
+@media (min-width: 320px) and (max-width: 409px) {
+    /* TaskTodo styles*/
+    .container {
+        width: 95%;
+        height: 75vh;
+        box-shadow: 5px 5px 6px dimgray;
+    }
+
+
+    /*Styles for Itemlist block*/
+    .tasks_item_list {
+        width: 100%;
+        height: 50vh;
+    }
+
+    /*Styles for footer block */
+    .footer {
+        width: 100%;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 410px) and (max-width: 767px) {
+    /* TaskTodo styles*/
+    .container {
+        width: 95%;
+        height: 75vh;
+        box-shadow: 5px 5px 6px dimgray;
+    }
+
+    /*Styles for Itemlist block*/
+    .tasks_item_list {
+        width: 100%;
+        height: 50vh;
+    }
+
+    /*Styles for footer block */
+    .footer {
+        width: 100%;
+        margin-right: 5%;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* TaskTodo styles*/
+    .container {
+        width: 95%;
+        height: 65vh;
+    }
+
+    /*Styles for Itemlist block*/
+    .tasks_item_list {
+        width: 100%;
+        height: 50vh;
+    }
+
+    /*Styles for footer block */
+    .footer {
+        width: 100%;
+        margin-right: 5%;
+    }
 }

@@ -1,21 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import InputItem from '../InputItem/InputItem'
+import React, {useState} from "react";
+import InputItem from "../InputItem/InputItem";
 import ItemList from "../ItemList/ItemList";
 import Footer from "../Footer/Footer";
-import styles from './TaskTodo.module.css';
+import styles from "./TaskTodo.module.css";
 
 const TaskTodo = () => {
    const initialState = {
-        items : [
-            { task: 'Приготовить завтрак!',
-                isDone: true,
-                id: 1
-            },
-            { task: 'Продумать дизайн сайта',
-                isDone: false,
-                id: 2
-            },
-        ],
+        items :
+            JSON.parse(localStorage.getItem('editedList') ||
+            '[{"task": "Задача №1", "isDone": true, "id": 1, "disabled": true}, {"task": "Обязательно нужно что-то сделать!", "isDone": false, "id": 2, "disabled": true}]'
+            ),
         count: 2,
         sortTask: 'Все',
         isEmpty: false,
@@ -29,14 +23,6 @@ const TaskTodo = () => {
    const [isExist, setExist] = useState(initialState.isExist);
    const [sortTask, setSort] = useState(initialState.sortTask);
 
-    useEffect(() => {
-        console.log('Component "items" is mounted!');
-    }, [count]);
-
-   useEffect(() => {
-       console.log(' Item is updated');
-   });
-
     const onClickDone = id => {
         const newItemList = items.map( item => {
             const newItem = {...item};
@@ -46,36 +32,62 @@ const TaskTodo = () => {
             return newItem;
         });
         setItems(newItemList)
-    };
+   };
 
     const onClickDelete = id => {
         const newItemList = items.filter(item => item.id !== id);
         setItems(newItemList);
-        setCount((count) => count - 1)
+        setCount(count - 1);
     };
 
     const onClickAdd = task => {
         if (task !== '' && !items.some(item => item.task === task)) {
+            const id = items.length > 0?
+                items[items.length-1].id + 1: 0;
             const newItems = [
                 ...items,
                 {
                     task,
                     isDone: false,
-                    id: count +1
+                    id: id,
+                    disabled: true
                 }
             ];
             setItems(newItems);
-            setCount((count) => count + 1);
+            setCount(count + 1);
             setEmpty(false);
             setExist(false)
         } else {
-            setEmpty(true);
-            setExist(true);
+            setEmpty(task === '');
+            setExist(task !== '');
         }
     };
 
-   const onClickEdit = taskedit => {};
+   const onClickEdit = id => {
+           const newItemList = items.map( item => {
+               if (item.id === id) {
+                   item.disabled = !item.disabled;
+               }
+               return item;
+           });
+           setItems(newItemList);
+   };
+
+   const onChangeItem = (id, newTask) => {
+       const newItemList = items.map(item => {
+           const newTaskValue = {...item};
+           if (item.id === id) {
+               newTaskValue.task = newTask;
+           }
+           return newTaskValue;
+       });
+           setItems(newItemList);
+   };
+
    const onClickSort = sorting => setSort(sorting);
+
+   let addToLocal = JSON.stringify(items);
+   localStorage.setItem('editedList', addToLocal);
 
         let sortingTasks;
         switch (sortTask) {
@@ -102,10 +114,14 @@ const TaskTodo = () => {
                 </div>
                 <div className={styles.tasks_item_list}>
                 <ItemList
+                    task = {items.task}
+                    disabled = {items.disabled}
                     sort={sortingTasks}
                     sortValue={sortTask}
                     onClickDone={onClickDone}
                     onClickDelete={onClickDelete}
+                    onClickEdit = {onClickEdit}
+                    onChangeItem = {onChangeItem}
                 />
                 </div>
                 <InputItem onClickAdd={onClickAdd} isEmpty={isEmpty} isExist={isExist}/>

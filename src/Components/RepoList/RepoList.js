@@ -1,6 +1,6 @@
-import React from 'react';
-import styles from './RepoList.module.css';
-import Repository from '../Repository/Repository';
+import React from "react";
+import styles from "./RepoList.module.css";
+import Repository from "../Repository/Repository";
 
 const RepoList = ({repoList, onClickNext, onClickBack, firstRepo, lastRepo }) => {
     return(

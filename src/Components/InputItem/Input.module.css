@@ -26,44 +26,33 @@
 .input_empty,
 .input_exist {
     position: relative;
+    border-color: red;
+    border-radius: 15px;
+    background-color: rgba(255,0,29,0.14);
 }
 
 .input_exist::before {
     content: 'Такая задача уже есть в вашем списке. Введите другое название';
-    color: #fff;
-    background: #356EFF;
-    border-radius: 6px;
+    color: red;
     font: normal normal 14px/16px 'Roboto';
     height: auto;
     max-width: 240px;
     padding: 8px 11px;
     position: absolute;
-    bottom: 50px;
-    left: 20px;
+    bottom: 35px;
+    left: 0;
 }
 
 .input_empty::before {
     content: 'Поле должно быть заполнено!';
-    color: #fff;
-    background: #356EFF;
-    border-radius: 6px;
+    color: red;
     font: normal normal 14px/16px 'Roboto';
     height: auto;
     width: auto;
     padding: 8px 11px;
     position: absolute;
-    bottom: 50px;
-    left: 20px;
-}
-
-.input_empty:after,
-.input_exist:after {
-    content: '';
-    position: absolute;
-    border: 10px solid transparent;
-    border-top-color: #356EFF;
-    bottom: 31px;
-    left: 40px;
+    bottom: 30px;
+    left: 0;
 }
 
 .addbutton {
@@ -75,4 +64,52 @@
 
 .addbutton:hover {
     opacity: 0.8;
+}
+
+@media (min-width: 320px) and (max-width: 409px) {
+    .tasks {
+        width: 100%;
+    }
+
+    .input_box {
+        margin-right: 5px;
+    }
+
+    .addbutton {
+        height: 40px;
+        width: 40px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .tasks {
+        width: 95%;
+    }
+
+    .input_box {
+        margin-right: 5px;
+    }
+
+    .input {
+        height: 45px;
+        font-size: 25px;
+    }
+
+    .addbutton {
+        margin-top: 3px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .input_exist::before {
+        width: 40%;
+        font-size: 24px;
+        bottom: 55px;
+        line-height: 25px;
+    }
+
+    .input_empty::before {
+        font-size: 20px;
+        bottom: 50px;
+    }
 }

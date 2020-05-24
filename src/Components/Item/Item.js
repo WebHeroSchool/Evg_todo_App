@@ -1,21 +1,37 @@
-import React from 'react';
-import classnames from 'classnames';
-import styles from './Item.module.css';
+import React from "react";
+import classnames from "classnames";
+import styles from "./Item.module.css";
 import PropTypes from "prop-types";
 
 class Item extends React.Component {
-    render() {
+    state = {
+        task: this.props.task
+    };
 
-        const {task, isDone} = this.props;
-        return(
-            <span className={
-                classnames({
-                    [styles.item]: true,
-                    [styles.done]: isDone
-                })}>
-                    {task}
-            </span>);
-    }
+    onChangeTask = e => {
+       this.setState ({
+           task: e.currentTarget.value
+       });
+        this.props.onChangeItem(this.props.id, e.currentTarget.value);
+    };
+
+   render() {
+       const {id, disabled, isDone} = this.props;
+       return(
+           <input
+               type='text'
+               className={
+                   classnames({
+                       [styles.item]: true,
+                       [styles.done]: isDone,
+                       [styles.edit_mode]: !disabled && !isDone
+                   })}
+               value={this.state.task}
+               id={id}
+               disabled={disabled}
+               onChange={this.onChangeTask}
+           />);
+   }
 }
 
     Item.propTypes = {

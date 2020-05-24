@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import Contacts from "../Contacts/Contacts";
-import styles from './About.module.css';
-import {Octokit} from '@octokit/rest';
+import styles from "./About.module.css";
+import {Octokit} from "@octokit/rest";
 import RepoList from "../RepoList/RepoList";
 
 const octokit = new Octokit();
@@ -66,7 +66,7 @@ class About extends React.Component {
     };
 
     render() {
-        const {isLoading, repoList, fetchFail, errorMessage, infoOfUser} = this.state;
+        const {isLoading, repoList, fetchFail, infoOfUser} = this.state;
         const Preloader = () => <span className={styles.preloader}> </span>;
         return (
             <div className={styles.boxAbout}>
@@ -99,12 +99,12 @@ class About extends React.Component {
                         <div>
                             {fetchFail ?
                                 <div>
-                                    <h3> Список репозиториев на github.com </h3>
+                                    <h3> Что-то пошло не так. Невозможно отобразить список репозиториев :( </h3>
                                 </div> :
                                 <div>
                                     {repoList.length === 0 ?
                                         <div>
-                                            <h3> Список репозиториев на github.com </h3>
+                                            <h3> Список репозиториев на github.com. К сожалению у Вас нет ниодного репозитория... </h3>
                                         </div> :
                                         <RepoList
                                             repoList={repoList}
